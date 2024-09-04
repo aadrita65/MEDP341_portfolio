@@ -7,26 +7,68 @@
             font-family: monospace;
             text-align: center;
             background-color: cadetblue;
+            background-image: url('greenback.jpg');
+  background-size: cover;
+  background-position: center;
+  background-size: 100vw 100vh;
         }
-        p{
-            font-size: larger;
-            color: white;
+        p {
+  font-size: 30px;
+  color: white;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+        
+        .button {
+        text-align: center;
+        font-size: 20px;
+        color: rgb(18, 22, 156);
+        background-color: rgb(58, 175, 50);
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
         }
+        .button:hover {
+  background-color: rgba(84, 221, 75, 0.8);
+  color: rgb(29, 34, 196);
+  text-decoration: none;
+  cursor: pointer;
+        }
+  h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(30, end);
+  font-size: 40px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
     </style>
 </head>
 <body>
-    <h1>Hello!</h1>
+    <h1>Welcome to My Page!</h1>
     <p> My name is Adiba</p>
-    <p> I am a senior at Hunter College and my major is Emerging Media</p>
-    <p> Some of my hobbies include painting, drawing, biking, hiking, weightlifting </p>
-    <p> I have experience with HTML, CSS, SQL, PHP and JavaScript. Im good with HTML and CSS and my current focus is learning more JavaScript. </p>
-    <p> I look forward to developing more skills so that i can create a website portfolio and apply to internships to build more experience.</p>
-
-
-    <a href="https://aadrita65.github.io/FINALPROJECT/finalproject.html">Short Trivia I Made Last Semester</a>
+    <p> This is my website for MEDP 341</p>
+    
+    <a href="intro.html"class="button">About Me</a>
+    <a href="week1.html"class="button">Week 1</a>
     <br>
     <br>
-    <img src="catimage.jpeg" width="400" height="500">
+    <img src="babycat.jpg" width="330" height="430">
+   
 </body>
 
 </html>
