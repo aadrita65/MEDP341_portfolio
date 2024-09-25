@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Ideate </title>
+        
+        <style>
+            body{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 90px;
+    
+            }
+            h1 {
+                text-align: center;
+                font-size: 50px;
+            }
+            button{
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ideate</h1>
+        <a href="index.html" class="button">HomePage</a>
+        <br>
+        <a href="https://taper.badquar.to/12/whats_in_my_bag.html" class="site">Whats In My Bag</a>
+        <h3>Overview</h3>
+        <p>This websites appears to be a simple page that displays a button and a list of items. When you click the button, it reveals the next item in the list, allowing you to progressively discover the contents of the virtual bag.</p>
+        <h3>Breakdown</h3>
+        <p>Between the script tags, the variable "t" is declared as an array containing strings, each representing a list of items that could be in this bag. Each string is separated into parts using .split(0), which creates an array of 
+            phrases related to items like a credit card, cash, shopping bags, etc. The script uses a loop to randomize the order in which items from the "t" array are displayed. The "o" varaible is an array of randomized positions corresponding 
+            to each item in "t".
+        <br>
+            The "l.onclick" function defines what happens when the button is clicked. If the button is clicked, it adds a new phrase from the "t" array to the existing paragraph element. The script tracks the current position in the "h" array and 
+            goes through the list of items, adding them one by one to the page. The button also appears to disappear from the page when the list is finished. </p>
+    
+        </body>
+</html>
