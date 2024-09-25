@@ -1,8 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Create Your Own Cosmos</title>
+  <title>Week 3 Changes to the site</title>
+  <nav>
+    <a href="index.html" class="button">Home</a>
+    <a href="week1.html" class="button">Week 1</a>
+    <a href="week2.html" class="button">Week 2</a>
+    <a href="week3.html" class="button">Week 3</a>
+    <a href="week4.html" class="button">Week 4</a>
+    <a href="intro.html" class="button">About Me</a>
+  </nav>
   <style>
+    nav{
+           
+           top: 0;
+           left: 00;
+           padding: 10px;
+           display: flex;
+           justify-content: flex-start; 
+          
+       }
+       .button {
+        text-align: center;
+        font-size: 20px;
+        color: rgb(180, 219, 23);
+        background-color: rgb(231, 52, 11);
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 15px;
+        }
+        .button:hover {
+  background-color: rgba(161, 177, 20, 0.8);
+  color: rgb(148, 37, 6);
+  text-decoration: none;
+  cursor: pointer;
+        }
     body {
       background-color: #000;
       color: #fff;
@@ -12,45 +46,29 @@
       margin: 0 auto;
   display: block;
     }
-  </style>
-</head>
-<body>
-  <canvas id="canvas" width="1000" height="600"></canvas>
-  <script>
-    var c = document.getElementById('canvas');
-    var ctx = c.getContext('2d');
-    var stars = [];
-    var s = 2;
-    var bg = '#000';
-    var color = '#fff';
 
-    for (var i = 0; i < 100; i++) {
-      stars.push({x: Math.random() * c.width, y: Math.random() * c.height, size: s, color: color});
-    }
+    body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #c00cbd, #7340b2, #720181, #6757c9);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
 
-    function draw() {
-      ctx.clearRect(0, 0, c.width, c.height);
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, c.width, c.height);
-      for (var i = 0; i < stars.length; i++) {
-        ctx.fillStyle = stars[i].color;
-        ctx.beginPath();
-        ctx.arc(stars[i].x, stars[i].y, stars[i].size, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-    }
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-    c.addEventListener('mousemove', function(e) {
-  stars.push({x: e.offsetX, y: e.offsetY, size: s, color: color});
-  draw();
-});
-
-c.addEventListener('click', function(e) {
-  stars.push({x: e.offsetX, y: e.offsetY, size: s, color: color});
-  draw();
-});
-
-    draw();
-  </script>
+    </style>
+  <body>
+    <h1>Changes and Additions to the Site</h1>
 </body>
 </html>

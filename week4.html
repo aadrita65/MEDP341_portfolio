@@ -2,27 +2,113 @@
 <html>
     <head>
         <title> Ideate </title>
-        
+        <nav>
+            <a href="index.html" class="button">Home</a>
+            <a href="week1.html" class="button">Week 1</a>
+            <a href="week2.html" class="button">Week 2</a>
+            <a href="week3.html" class="button">Week 3</a>
+            <a href="week4.html" class="button">Week 4</a>
+            <a href="intro.html" class="button">About Me</a>
+          </nav>
         <style>
+            
             body{
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                margin: 90px;
+            font-family: monospace;
+            text-align: center;
+            background-color: rgb(60, 135, 77);
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        p{
+            font-size: larger;
+            color: rgb(215, 238, 130); 
+        }
+            h1{
+            font-size: 30px;
+            text-align: center;
+            color: rgb(79, 23, 182);
+        }
+            nav{
+           
+           top: 0;
+           left: 00;
+           padding: 10px;
+           display: flex;
+           justify-content: flex-start; 
+          
+       }
+            body{
+            font-family: monospace;
+            text-align:left;
+            background-color: rgb(60, 135, 77);
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        p{
+            font-size: larger;
+            color: white;
+        }
     
-            }
-            h1 {
-                text-align: center;
-                font-size: 50px;
-            }
-            button{
-                text-align: right;
-            }
+        .button {
+        text-align: center;
+        font-size: 20px;
+        color: rgb(52, 34, 98);
+        background-color: rgb(228, 238, 95);
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 15px;
+        }
+        .button:hover {
+  background-color: rgba(213, 225, 46, 0.8);
+  color: rgb(53, 46, 88);
+  text-decoration: none;
+  cursor: pointer;
+        }
+        .site{
+            text-align: center;
+        font-size: 20px;
+        color: rgb(26, 87, 61);
+        background-color: rgb(202, 233, 48);
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-right: 15px;
+        }
+        .flex-box {
+  display: inline-block;
+  flex-direction: column; /* or column, depending on your needs */
+  padding: 15px;
+  margin: 10px;
+  background-color: #388d13;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #1d2482, #396add, #3583a8, #59d3d1);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
         </style>
     </head>
     <body>
         <h1>Ideate</h1>
-        <a href="index.html" class="button">HomePage</a>
+    
         <br>
         <a href="https://taper.badquar.to/12/whats_in_my_bag.html" class="site">Whats In My Bag</a>
         <h3>Overview</h3>
