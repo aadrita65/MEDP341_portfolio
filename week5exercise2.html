@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> What's in my bag</title>
+    <nav>
+        <a href="index.html" class="button">Home</a>
+        <a href="week5.html" class="button">Week 5</a>
+    </nav>
+    <style>
+        .button {
+            background-color: #cc4de2;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #cd1a5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #860825;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            background: linear-gradient(135deg, #fe96c3, #ffccd2); 
+            animation: gradientMove 5s ease infinite;
+            margin: 0;
+             padding: 0;
+            min-height: 100vh;
+        }
+        @keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+        #bag-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #bag-list li {
+            margin-bottom: 10px;
+        }
+       img {
+            width:100px;
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+            color: aliceblue;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>What's in my bag?</h1>
+        <button id="bag-button">What's in my Bag</button>
+        <ul id="bag-list"></ul>
+
+    <script>
+        const bagButton = document.getElementById('bag-button');
+        const bagList = document.getElementById('bag-list');
+
+        const items = [
+            {
+                "name": "Lip Balm",
+                "image": "lipbalm.jpg",
+                "description": "a moisturizing tinted lip balm!"
+            },
+            {
+                "name": "Gum",
+                "image": "gum.jpg",
+                "description": "minty gum to take after meals"
+            },
+            {
+                "name": "Phone",
+                "image": "phone.jpg",
+                "description": "my phone duh"
+            },
+            {
+                "name": "Keys",
+                "image": "keys.jpeg",
+                "description": "to get into my house so i dont get locked out again"
+            },
+            {
+                "name": "Perfume",
+                "image": "perfume.png",
+                "description": "gotta make sure to always smell good!"
+            },
+            {
+                "name": "Wallet",
+                "image": "wallet.png",
+                "description": "cash and card for any purchases that need to be made"
+            },
+            {
+            "name": "ID",
+                "image": "id.jpg",
+                "description": "for that drinkity drink (im lying i dont drink lol)"
+            },
+            {
+                "name": "Lotion",
+                "image": "lotion.png",
+                "description": "some moisture for dry skin"
+            },
+            {
+                "name": "Hand Sanitizer",
+                "image": "handsanitizer.png",
+                "description": "too much germs on the train!"
+            },
+        
+        ]
+
+        let index = 0;
+        let phase = "images";
+
+        bagButton.addEventListener('click', () => {
+            if (phase === "images") {
+            if (index < items.length) {
+
+        const listItem = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = '/' + items[index].image;
+        img.classList.add('small-image');
+    
+        listItem.appendChild(img);
+        bagList.appendChild(listItem);
+        index++;
+      } else { 
+        index = 0;
+        phase = "descriptions";
+        bagButton.textContent = "Show Descriptions"; 
+      }
+    } else if (phase === "descriptions" && index < items.length) {
+        const listItem = bagList.children[index];
+        const description = document.createElement('p');
+        description.classList.add('description');
+        description.textContent = items[index].description;
+        listItem.appendChild(description);
+        index++;
+    }
+});
+    </script>
+</body>
+</html>
