@@ -6,11 +6,9 @@
         body{
             font-family: monospace;
             text-align: center;
-            background-color: cadetblue;
-            background-image: url('greenback.jpg');
-  background-size: cover;
-  background-position: center;
-  background-size: 100vw 100vh;
+           
+ 
+  
         }
         p {
   font-size: 30px;
@@ -27,19 +25,20 @@
   }
 }
         
-        .button {
+.button {
         text-align: center;
         font-size: 20px;
-        color: rgb(18, 22, 156);
-        background-color: rgb(58, 175, 50);
+        color: rgb(180, 219, 23);
+        background-color: rgb(165, 54, 234);
         display: inline-block;
         padding: 10px 20px;
         text-decoration: none;
         border-radius: 5px;
+        margin-right: 15px;
         }
         .button:hover {
-  background-color: rgba(84, 221, 75, 0.8);
-  color: rgb(29, 34, 196);
+  background-color: rgba(161, 177, 20, 0.8);
+  color: rgb(130, 12, 141);
   text-decoration: none;
   cursor: pointer;
         }
@@ -53,6 +52,25 @@
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(45deg, #f0db52, #f083e4, #d1cc44, #f79b38);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 
@@ -71,7 +89,7 @@
     <a href="week5.html"class="button">Week 5</a>
     <br>
     <br>
-    <img src="babycat.jpg" width="330" height="430">
+    <img src="babycat.jpg" style="max-width: 20%; height: auto;">
    
 </body>
 
