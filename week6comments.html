@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        .comments-header a {
+            text-decoration: none;
+            color: blue;
+            font-size: 14px;
+        }
+
+        .comments {
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .comment {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .comment-author {
+            color: blue;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .comment-date {
+            color: grey;
+            font-size: 10px;
+        }
+
+        .comment-form {
+            margin-top: 20px;
+        }
+
+        .comment-form input, 
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .comment-form input[type="submit"] {
+            width: auto;
+            padding: 5px 10px;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 100px;
+            background-color: #adcafc;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: underline;
+            color: blue;
+            font-size: 12px;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .title .blue {
+        color: blue;
+        font-size: larger;
+        text-decoration: underline;
+    }
+
+    .title .red {
+        color: red;
+        font-size: larger;
+        text-decoration: underline;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+
+        <ul>
+            <iframe src="https://giphy.com/embed/8ZRbBoxd5NWfWpnkK8" width="90" height="90" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-8ZRbBoxd5NWfWpnkK8"></a></p>
+            <div class="title">
+                <span class="blue">n</span>
+                <span class="red">a</span>
+                <span class="blue">s</span>
+                <span class="red">t</span>
+                <span class="blue">y</span>
+                <br>
+                <span class="red">n</span>
+                <span class="blue">e</span>
+                <span class="red">t</span>
+                <span class="blue">s</span>
+            </div>
+
+
+            <p>internet
+                surfing
+                club</p>
+                <li><a href="week6.html">Home</a></li>
+          <li><a href="index.html">Back to Previous Site</a></li>
+          <li><a href="week1.html">Week 1</a></li>
+          <li><a href="week2.html">Week 2</a></li>
+          <li><a href="week3.html">Week 3</a></li>
+          <li><a href="week4.html">Week 4</a></li>
+          <li><a href="week5.html">Week 5</a></li>
+          <li><a href="#">September 2012</a></li>
+          <li><a href="#">January 2012</a></li>
+            <li><a href="#">June 2011</a></li>
+            <li><a href="#">May 2011</a></li>
+            <li><a href="#">April 2011</a></li>
+            <li><a href="#">March 2011</a></li>
+            <li><a href="#">February 2011</a></li>
+            <li><a href="#">January 2011</a></li>
+          <li><a href="#">December 2010</a></li>
+          <li><a href="#">November 2010</a></li>
+         <li><a href="#">October 2010</a></li>
+         <li><a href="#">September 2010</a></li>
+          <li><a href="#">August 2010</a></li>
+        <li><a href="#">July 2010</a></li>
+        <li><a href="#">June 2010</a></li>
+
+      </ul>   
+      </div>
+
+      <div class="content">
+    <div class="comments-header">
+        <a href="#comments">Comments (0)</a>
+    </div>
+
+    <div class="comments" id="comments">
+        <!-- Existing comments can go here -->
+    </div>
+
+    <div class="comment-form">
+        <h4>Leave a comment</h4>
+        <p>Login first if you are a user! <br>
+            If a guest, please use form below (BTW, some basic html works, not img tags yet)</p>
+        <form id="commentForm">
+            <label for="name">Name (required)</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
+
+            <input type="submit" value="Submit Comment">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('commentForm');
+            const commentsContainer = document.getElementById('comments');
+            const commentCount = document.querySelector('.comments-header a');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `
+                    <a href="#" class="comment-author">— ${name}</a>
+                    <span class="comment-date">${new Date().toLocaleString()}</span>
+                    <p>${comment}</p>
+                `;
+
+                commentsContainer.appendChild(newComment);
+                
+                commentCount.textContent = `Comments (${commentsContainer.children.length})`;
+                form.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>
