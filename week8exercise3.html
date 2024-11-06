@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Quote Generator</title>
+    <nav>
+        <a href="index.html" class="button">Home</a>
+        <a href="week2.html" class="button">Week 2</a>
+        <a href="week3.html" class="button">Week 3</a>
+        <a href="week4.html" class="button">Week 4</a>
+        <a href="week5.html" class="button">Week 5</a>
+        <a href="intro.html" class="button">About Me</a>
+      </nav>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+#quote-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#quote {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#author {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a9bd3;
+}
+
+#title {
+    font-size: 2em;
+    color: #4682b4;
+    margin-bottom: 30px; /* Space between title and quote box */
+}
+
+</style>
+<body>
+    <h1 id="title">Quote Generator</h1>
+    <div id="quote-container">
+        <p id="q">"Your inspirational quote will appear here."</p>
+        <p id="a">- Author</p>
+        <button id="new-quote">New Quote</button>
+    </div>
+</body>
+<script>
+    // Function to fetch a new quote from the API
+async function getQuote() {
+    try {
+        const response = await fetch('https://zenquotes.io/api/random');
+        const data = await response.json();
+        displayQuote(data[0]);
+    } catch (error) {
+        console.error("Error fetching quote:", error);
+        document.getElementById('quote').innerText = "An error occurred. Please try again.";
+        document.getElementById('author').innerText = "";
+    }
+}
+
+// Function to update the quote and author in the UI
+function displayQuote(data) {
+    document.getElementById('quote').innerText = `"${data.q}"`;
+    document.getElementById('author').innerText = `- ${data.a}`;
+}
+
+// Event listener for the "New Quote" button
+document.getElementById('new-quote').addEventListener('click', getQuote);
+
+// Initial quote load
+getQuote();
+
+</script>
+</html>

@@ -165,7 +165,7 @@
     </div>
 
     <div class="comments" id="comments">
-        <!-- Existing comments can go here -->
+     
     </div>
 
     <div class="comment-form">
@@ -199,11 +199,11 @@
                 newComment.classList.add('comment');
                 newComment.innerHTML = `
                     <a href="#" class="comment-author">— ${name}</a>
-                    <span class="comment-date">${new Date().toLocaleString()}</span>
+                    <span class="comment-date">${new Date().toLocaleString()}</span>  
                     <p>${comment}</p>
                 `;
 
-                commentsContainer.appendChild(newComment);
+                commentsContainer.appendChild(newComment); 
                 
                 commentCount.textContent = `Comments (${commentsContainer.children.length})`;
                 form.reset();
