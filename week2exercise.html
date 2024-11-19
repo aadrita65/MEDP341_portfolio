@@ -2,7 +2,78 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title></title>
+  <title>Mad Libs</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffa500; 
+      flex-direction: column;
+    }
+
+    #container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    }
+
+    h1 {
+      position: fixed;
+      top: 170px;
+      left: 50%;
+      transform: translateX(-50%); /* Center the title */
+      color: #8fdbec;
+      font-size: 40px;
+      margin: 0;
+      z-index: 1; /* Ensure title stays above other content */
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #lib-button {
+      padding: 10px 20px;
+      background-color: #87ceeb; /* Light blue button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    #lib-button:hover {
+      background-color: #5aaed6; /* Darker blue on hover */
+      transform: scale(1.05);
+    }
+
+    #story {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #fefcfc;
+    }
+  </style>
+
  </head>
  <body>
  
